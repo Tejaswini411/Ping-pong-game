@@ -10,24 +10,35 @@ export default class Ball {
 
 
   }
-  ballMove(){
+  ballMove()
+  {
   	this.x= this.x+this.vx;
   	this.y=this.y+this.vy;
 
   }
 
-  reset(){
+  reset()
+  {
   	this.x= this.boardWidth/2;
   	this.y=this.boardHeight/2;
   	this.vy=0;
-  	while(this.vy === 0){
+  	while(this.vy === 0)
+  	{
   		this.vy= (Math.random() *10) - 5;
 
   	}
   	this.vx=this.direction * (6- Math.abs(this.vy));
   }
 
-  wallCollision(){
+  wallCollision()
+  {
+  	const hitTop = (this.y - this.radius <= 0);
+    console.log("here");
+  	const hitBottom = (this.y + this.radius >= this.boardHeight);
+  	if(hitTop ||hitBottom)
+  	{
+  		this.vy = this.vy * -1;
+  	}
 
   }
 

@@ -6,10 +6,11 @@ export const BOARD_HEIGHT = 256;
 export const PADDLE_WIDTH = 8;
 export const PADDLE_HEIGHT = 56;
 export const PADDLE_GAP = 10;
-
-export const BALL_RADIUS = 5;
-
 //export const PADDLE_GAP2 = 494;
+
+export const BALL_RADIUS = 8;
+
+
 
 export const KEYS = {
 	p1Up: "w",

@@ -29,7 +29,6 @@ moveUp()
     this.y =  Math.max(0, this.y - this.speed);
    // this.y = this.y - this.speed;
 
-
 }
 
 
