@@ -1,4 +1,4 @@
-import {SVG_NS ,PADDLE_HEIGHT,PADDLE_WIDTH,PADDLE_GAP,PADDLE_GAP2, KEYS, BALL_RADIUS} from '../settings';
+import {SVG_NS ,PADDLE_HEIGHT,PADDLE_WIDTH,PADDLE_GAP,PADDLE_GAP2, KEYS, BALL_RADIUS, PADDLE_SPEED} from '../settings';
 import Board from './Board';
 import Paddle from './Paddle' ;
 import Ball from './Ball'
@@ -16,7 +16,15 @@ export default class Game
     this.paddle2 = new Paddle(PADDLE_WIDTH,PADDLE_HEIGHT,this.height,this.width-PADDLE_WIDTH-PADDLE_GAP,(this.height/2) - (PADDLE_HEIGHT/2), KEYS.p2Up, KEYS.p2Down);
 
     this.ball= new Ball(BALL_RADIUS, this.width, this.height);
-    
+
+    this.paused = false;
+    document.addEventListener("keydown", event =>  {
+      if (event.key === KEYS.pause) {
+        this.paddle1.setSpeed(PADDLE_SPEED);
+        this.paddle2.setSpeed(PADDLE_SPEED);
+        this.paused = !this.paused;
+      }
+    });
 
 
 		// Other code goes here...
@@ -24,6 +32,12 @@ export default class Game
 
   render()
    {
+    if (this.paused) {
+      this.paddle1.setSpeed(0);
+      this.paddle2.setSpeed(0);
+
+      return;
+    }
 		// More code goes here....
 		this.gameElement.innerHTML='';
 

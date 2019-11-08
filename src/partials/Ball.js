@@ -1,5 +1,5 @@
 import{SVG_NS } from '../settings';
-
+import PingSound from '../../public/sounds/pong-04.wav';
 export default class Ball 
 {
   constructor(radius, boardWidth, boardHeight) 
@@ -8,6 +8,7 @@ export default class Ball
     this.boardWidth = boardWidth;
     this.boardHeight = boardHeight;
     this.direction = 1;
+    this.ping = new Audio(PingSound);
     this.reset();
 
 
@@ -32,7 +33,7 @@ export default class Ball
   	this.vx=this.direction * (6- Math.abs(this.vy));
   }
 
-  wallCollision()
+  wallCollision(paddle1,paddle2)
   {
   	const hitTop = (this.y - this.radius <= 0);
     //console.log("here");
@@ -50,12 +51,14 @@ export default class Ball
 
     if (hitLeft) {
       this.direction = 1;
+      paddle2.increaseScore();
       this.reset();
 
     }
 
     else if (hitRight) {
       this.direction =-1;
+      paddle1.increaseScore();
       this.reset();
     }
 
@@ -65,7 +68,7 @@ export default class Ball
   {
     let hitWall, checkTop,checkBottom;
 
-  if(this.direction ===1)
+  if(this.vx >0)
   {
        const p2Walls = paddle2.getCoordinates();
   hitWall = (this.x + this.radius >= p2Walls.left);
@@ -81,10 +84,11 @@ export default class Ball
    hitWall = (this.x - this.radius <= p1Walls.right);
    checkTop = (this.y - this.radius >= p1Walls.top);
    checkBottom = (this.y + this.radius <= p1Walls.bottom);
- }
+  }
    if (hitWall && checkTop && checkBottom){
+    this.ping.play();
     this.vx = this.vx * -1;
-    this.direction = this.direction * -1;
+    
 
   }
 
@@ -105,7 +109,7 @@ export default class Ball
 
   	svg.appendChild(ball);
   	this.ballMove();
-  	this.wallCollision();
+  	this.wallCollision(paddle1,paddle2);
     this.paddleCollision(paddle1,paddle2);
 
   }
