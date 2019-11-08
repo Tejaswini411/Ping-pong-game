@@ -45,6 +45,11 @@ increaseScore()
 {
   this.score = this.score +1;
 }
+getScore()
+{
+  return this.score;
+}
+
 
 setSpeed(speed)
  {
