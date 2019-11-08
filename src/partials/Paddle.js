@@ -1,7 +1,9 @@
 import{SVG_NS } from '../settings';
 
-export default class Paddle {
-  constructor(width, height, boardHeight, x, y,upKey, downKey) {
+export default class Paddle 
+{
+  constructor(width, height, boardHeight, x, y,upKey, downKey) 
+  {
     this.width = width;
     this.height = height;
     this.x = x;
@@ -37,6 +39,17 @@ moveDown()
        this.y =  Math.min(this.boardHeight - this.height, this.y + this.speed);
   
 
+}
+
+getCoordinates()
+{
+  return {
+    left:this.x,
+    top:this.y,
+    right:this.x + this.width,
+    bottom:this.y + this.height
+
+  };
 }
 
 
