@@ -7,10 +7,12 @@ export const PADDLE_WIDTH = 8;
 export const PADDLE_HEIGHT = 56;
 export const PADDLE_GAP = 10;
 //export const PADDLE_GAP2 = 494;
-export const PADDLE_SPEED =10;
+export const PADDLE_SPEED = 10;
 export const BALL_RADIUS = 8;
 
 export const TEXT_SIZE = 30;
+
+export const MAX_SCORE = 5;
 
 
 export const KEYS = {
@@ -20,6 +22,5 @@ export const KEYS = {
 	p2Down: "ArrowDown",
 	pause: " "
 }
-
 
 

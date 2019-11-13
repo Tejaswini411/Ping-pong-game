@@ -1,9 +1,7 @@
-import{SVG_NS , PADDLE_SPEED} from '../settings';
+import { SVG_NS, PADDLE_SPEED } from '../settings';
 
-export default class Paddle 
-{
-  constructor(width, height, boardHeight, x, y,upKey, downKey) 
-  {
+export default class Paddle {
+  constructor(width, height, boardHeight, x, y, upKey, downKey, onKeyPressedCallBack, onKeyReleasedCallBack, color) {
     this.width = width;
     this.height = height;
     this.x = x;
@@ -11,65 +9,59 @@ export default class Paddle
     this.boardHeight = boardHeight;
     this.score = 0;
     this.speed = PADDLE_SPEED;
-    document.addEventListener("keydown", event => {
-      switch (event.key) {
-        case upKey:
-            this.moveUp();
-          break;
+    this.upKey = upKey;
+    this.downKey = downKey;
+    this.color = color;
 
-        case downKey:
-            this.moveDown();
-          break;
-
-
-      }
-    });
+    document.addEventListener("keydown", event => onKeyPressedCallBack(event.key));
+    document.addEventListener("keyup", event => onKeyReleasedCallBack(event.key));
   }
 
-moveUp()
-    { 
-    this.y =  Math.max(0, this.y - this.speed);
-   // this.y = this.y - this.speed;
+  movePaddle(keys){
+    if(keys[this.upKey]) {
+      this.moveUp();
+    }
+    if(keys[this.downKey]) {
+      this.moveDown();
+    }
+  }
 
-}
+  moveUp() {
+    this.y = Math.max(0, this.y - this.speed);
+    // this.y = this.y - this.speed;
 
-
-moveDown()
-     { 
-       this.y =  Math.min(this.boardHeight - this.height, this.y + this.speed);
-  
-
-}
-
-increaseScore()
-{
-  this.score = this.score +1;
-}
-getScore()
-{
-  return this.score;
-}
+  }
 
 
-setSpeed(speed)
- {
-  this.speed = speed;
-}
+  moveDown() {
+    this.y = Math.min(this.boardHeight - this.height, this.y + this.speed);
+  }
 
-getCoordinates()
-{
-  return {
-    left:this.x,
-    top:this.y,
-    right:this.x + this.width,
-    bottom:this.y + this.height
-
-  };
-}
+  increaseScore() {
+    this.score = this.score + 1;
+  }
+  getScore() {
+    return this.score;
+  }
 
 
+  setSpeed(speed) {
+    this.speed = speed;
+  }
 
-  
+  getCoordinates() {
+    return {
+      left: this.x,
+      top: this.y,
+      right: this.x + this.width,
+      bottom: this.y + this.height
+
+    };
+  }
+
+
+
+
   render(svg) {
     //...
     const paddle = document.createElementNS(SVG_NS, "rect");
@@ -77,10 +69,10 @@ getCoordinates()
     paddle.setAttributeNS(null, "height", this.height);
     paddle.setAttributeNS(null, "x", this.x);
     paddle.setAttributeNS(null, "y", this.y);
-    paddle.setAttributeNS(null, "fill", "white");
+    paddle.setAttributeNS(null, "fill", this.color);
 
     svg.appendChild(paddle);
-   
+
 
   }
 }
