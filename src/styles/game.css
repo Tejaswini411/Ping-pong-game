@@ -84,3 +84,39 @@ h1 {
   margin-bottom: 1rem; 
   text-align: center;
 }
+
+.text-wrap {
+  width: 100%;
+  text-align: center;
+  max-width: 500px;
+}
+
+.keyword {
+  color: red;
+}
+
+.blinking {
+      animation: blinkingText 0.8s infinite;
+    }
+
+    @keyframes blinkingText {
+      0% {
+        color: #000;
+      }
+
+      49% {
+        color: transparent;
+      }
+
+      50% {
+        color: transparent;
+      }
+
+      99% {
+        color: transparent;
+      }
+
+      100% {
+        color: #000;
+      }
+    }

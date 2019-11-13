@@ -3,39 +3,14 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>Pong</title>
-	<style>
-		.blinking {
-			animation: blinkingText 0.8s infinite;
-		}
-
-		@keyframes blinkingText {
-			0% {
-				color: #000;
-			}
-
-			49% {
-				color: transparent;
-			}
-
-			50% {
-				color: transparent;
-			}
-
-			99% {
-				color: transparent;
-			}
-
-			100% {
-				color: #000;
-			}
-		}
-	</style>
+	<title>Pong</title> 
 </head>
 
 <body>
 	<div class="game-wrapper">
 		<h1 id="heading">Pong!</h1>
+     	
+
 		<div id="game">
 			<!-- 
 			<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 512 256" width="512" height="256">
@@ -46,14 +21,28 @@
     				<rect x="494" y="100" width="8" height="56" fill="white" />
     			</svg>       -->
 
-		</div>
-		<!-- Rough-out your SVG mark-up here to start... -->
+		</div> 
 
+		<div class="text-wrap">
+		</br>
+	  
+     <h2>Instructions:</h2>
+     </br>
+     <ul>
+     <li>Use keys <span class="keyword"> "W" </span> and <span class="keyword"> "S" </span> for PLAYER1 to move paddle up/down</li>
+     </br>
+     <li>Use keys <span class="keyword"> "ArrowUp" </span> and <span class="keyword"> "ArrowDown" </span> for PLAYER2 to move paddle up/down</li>
+     </br>  
+     <li>Use key <span class="keyword"> "W" </span> or <span class="keyword"> "S" </span> or <span class="keyword"> "ArrowUp" </span> or <span class="keyword"> "ArrowDown" </span> to START the game </li>
+     </br>
+     <li>Use key <span class="keyword"> "Space" </span> to PAUSE game</li>
+     </ul> 
+    </div>
+	
 
+  
 
-
-
-	</div>
+   </div>
 	<script type="text/javascript" src="./src/index.js"></script>
 </body>
 
