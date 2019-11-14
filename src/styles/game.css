@@ -80,10 +80,10 @@ body {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem; 
   text-align: center;
-  text-shadow: 0 0 3px #FF0000, 0 0 5px #FF0000;
+  /*text-shadow: 0 0 3px #FF0000, 0 0 5px #FF0000;*/
 }
 
 .bg {
