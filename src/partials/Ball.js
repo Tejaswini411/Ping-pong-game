@@ -84,12 +84,16 @@ export default class Ball {
       checkBottom = (this.y + this.radius <= p1Walls.bottom);
     }
     if (hitWall && checkTop && checkBottom) {
+      if (this.vx>0) {
+        paddle2.shaking();
+      } else {
+        paddle1.shaking();
+      }
       this.ping.play();
       this.vx = this.vx * -1;
 
 
     }
-
 
   }
 

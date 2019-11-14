@@ -58,9 +58,22 @@ export default class Paddle {
 
     };
   }
+  
+  shaking() {
+    this.x -= 5;
+    setTimeout(() => {
+      this.x += 5;
+    }, 50);
 
+    setTimeout(() => {
+      this.x -= 5;
+    }, 150);
 
+     setTimeout(() => {
+      this.x += 5;
+    }, 200);
 
+  }
 
   render(svg) {
     //...

@@ -53,7 +53,7 @@ export default class Game
                                 KEYS.p1Down,
                                 paddle1onKeyPressed,
                                 paddle1onKeyReleased,
-                                'blue');
+                                '#66FFCC');
     this.paddle2 = new Paddle(PADDLE_WIDTH,
                                 PADDLE_HEIGHT,
                                 this.height,
@@ -63,13 +63,14 @@ export default class Game
                                 KEYS.p2Down,
                                 paddle2onKeyPressed,
                                 paddle2onKeyReleased,
-                                'red');
+                                '#FFFF99');
 
     this.ball= new Ball(BALL_RADIUS, this.width, this.height, () => {
       this.gameEnded = true;
-      document.getElementById('heading').innerText = this.paddle1.getScore() === MAX_SCORE ? "BLUE WINS!" : "RED WINS!"
+      document.getElementById('heading').innerText = this.paddle1.getScore() === MAX_SCORE ? "GREEN WINS!" : "YELLOW WINS!"
       document.getElementById('heading').className = "blinking";
     });
+    
 
     this.score1 = new Score(this.width/2 -50, 30, TEXT_SIZE);
 

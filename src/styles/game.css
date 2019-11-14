@@ -80,15 +80,22 @@ body {
 }
 
 h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 1rem; 
   text-align: center;
+  text-shadow: 0 0 3px #FF0000, 0 0 5px #FF0000;
+}
+
+.bg {
+  background: url("TZHonw.jpg");
 }
 
 .text-wrap {
   width: 100%;
   text-align: center;
   max-width: 500px;
+  color: white;
+  text-shadow:  2px 2px 8px #FF0000;
 }
 
 .keyword {
@@ -101,15 +108,15 @@ h1 {
 
     @keyframes blinkingText {
       0% {
-        color: #000;
+        color: #e60000;
       }
 
       49% {
-        color: transparent;
+        color: ;
       }
 
       50% {
-        color: transparent;
+        color: 660000;
       }
 
       99% {
@@ -117,6 +124,6 @@ h1 {
       }
 
       100% {
-        color: #000;
+        color: ff9999;
       }
     }
