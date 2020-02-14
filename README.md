@@ -1,6 +1,40 @@
-# Pong Game Starter
+# Pong Game 
 
-A starter project for a basic pong game using SVGs.
+## When you play the PONG Game, you either win or lose. There's no middle ground. :)
+
+### Game Preview
+![Game Preview](images/Pong.png)
+
+ # Technologies Used
+
+* HTML
+* SVGs
+* CSS (animation)
+* JavaScript
+* OOP with ES2015
+* nodeJS
+* Git & Github
+
+## Keys
+ 
+ #### Player 1 (GREEN Paddle)
+  
+  * w : Up
+  * s : Down
+
+#### Player 2 (YELLOW Paddle)
+
+  * ▲ : Up
+  * ▼: Down
+
+#### Pause
+  
+  Spacebar : To Pause
+
+#### To start the game 
+
+  PRESS( w or s or ▲ or ▼ )
+
 
 ## Setup
 
@@ -18,8 +52,6 @@ Once you run the start command you can access your project at http://localhost:3
 
 Read more about the [Parcel web application bundler here](https://parceljs.org/).
 
-### Game Preview
-![Game Preview](images/Pong.png)
 
 ## Deploy
 
