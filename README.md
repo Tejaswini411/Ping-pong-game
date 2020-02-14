@@ -18,6 +18,9 @@ Once you run the start command you can access your project at http://localhost:3
 
 Read more about the [Parcel web application bundler here](https://parceljs.org/).
 
+### Game Preview
+![Game Preview](images/Pong.png)
+
 ## Deploy
 
 The deployment workflow for this project will be a bit different from what you've used when deploying simple static websites.
